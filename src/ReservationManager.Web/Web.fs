@@ -1,6 +1,5 @@
 namespace ReservationManager
 
-open System
 open Giraffe
 open Microsoft.AspNetCore.Http
 
@@ -12,7 +11,8 @@ module HttpHandlers =
 
     let getReservations =
         fun (next : HttpFunc) (ctx : HttpContext) ->
-            let result = Queries.getAllReservations getEvents
+            let store = getEvents
+            let result = Queries.getAllReservations store
             json result next ctx
 
 [<RequireQualifiedAccess>]
