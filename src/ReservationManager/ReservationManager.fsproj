@@ -5,8 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Types.fs" />
+    <Compile Include="State.fs" />
     <Compile Include="Queries.fs" />
+    <Compile Include="Commands.fs" />
+    <Compile Include="Events.fs" />
   </ItemGroup>
 
 </Project>
