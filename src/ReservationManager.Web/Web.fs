@@ -2,15 +2,18 @@ namespace ReservationManager
 
 open System
 open Giraffe
+open Microsoft.AspNetCore.Http
 
 module HttpHandlers =
+    open EventStore.InMemory.Events
+
     let root =
         text "Welcome to the reservation manager"
 
     let getReservations =
-        let query () = Queries.getAllReservations ()
-
-        query () |> json
+        fun (next : HttpFunc) (ctx : HttpContext) ->
+            let result = Queries.getAllReservations getEvents
+            json result next ctx
 
 [<RequireQualifiedAccess>]
 module WebApp =
