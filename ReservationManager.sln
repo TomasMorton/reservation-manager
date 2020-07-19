@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{330C2150-3D35-4AF6-956A-CDAA1B08FA2E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReservationManager", "src\ReservationManager\ReservationManager.fsproj", "{2471BE88-FB77-4560-9B8C-82A1CA1C4B4A}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReservationManager.Web", "src\ReservationManager.Web\ReservationManager.Web.fsproj", "{2471BE88-FB77-4560-9B8C-82A1CA1C4B4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{72A9CD54-423B-46FC-88EE-92A71FCCB15C}"
 EndProject
