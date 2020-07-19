@@ -1,7 +1,7 @@
 ﻿namespace EventStore.InMemory
 
 open System
-open ReservationManager.Types
+open ReservationManager.State
 
 module Events =
     exception UnknownEntityType of string
