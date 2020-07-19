@@ -10,10 +10,10 @@ module Events =
     let private getReservations () =
         [ { Date = DateTime(2020, 01, 01)
             NumberOfAds = 3
-            ReservationId = ReservationId <| Guid.NewGuid() }
+            ReservationId = ReservationId.create () }
           { Date = DateTime(2020, 02, 01)
             NumberOfAds = 5
-            ReservationId = ReservationId <| Guid.NewGuid() } ]
+            ReservationId = ReservationId.create () } ]
 
     let getEvents entityType =
         match entityType with
