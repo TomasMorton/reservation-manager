@@ -1,21 +1,28 @@
 module ReservationManager.HttpHandlers
 
+open System.Collections.Concurrent
 open Giraffe
-open EventStore.InMemory.Events
+open EventStore.InMemory
 open Microsoft.AspNetCore.Http
 
-let root : HttpHandler =
-    text "Welcome to the reservation manager"
-
-let getReservations =
-    fun (next : HttpFunc) (ctx : HttpContext) ->
-        let store = getEvents
-        let result = Queries.getAllReservations store
-        negotiate result next ctx
+// App composition
+let store = ConcurrentDictionary<string, Event list>()
 
 let createCommandHandler () =
     let state = []
     CommandHandler.execute SystemClock.clock state
+
+let appendToStore events =
+    Store.appendEvents store events
+
+let getAllReservations () =
+    Store.getEvents store |> Queries.getAllReservations
+
+// Helpers
+let appendIfSuccessful result =
+    match result with
+    | Ok events -> appendToStore events
+    | Error _ -> ()
 
 let createResponse result (next : HttpFunc) (ctx : HttpContext) =
     match result with
@@ -26,8 +33,19 @@ let createResponse result (next : HttpFunc) (ctx : HttpContext) =
         ctx.SetStatusCode 400
         negotiate error next ctx
 
+// Handlers
+let root : HttpHandler =
+    text "Welcome to the reservation manager"
+
+let getReservations =
+    fun (next : HttpFunc) (ctx : HttpContext) ->
+        let result = getAllReservations ()
+        negotiate result next ctx
+
 let createReservation cmdData =
     fun (next : HttpFunc) (ctx : HttpContext) ->
         let handler = createCommandHandler ()
         let result = CreateReservation cmdData |> handler
+
+        appendIfSuccessful result
         createResponse result next ctx

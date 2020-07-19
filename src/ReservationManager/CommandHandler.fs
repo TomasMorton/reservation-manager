@@ -18,6 +18,7 @@ let execute clock state command =
             data
             |> toEventData timestamp
             |> ReservationCreated
-            |> Result.Ok
 
     event
+    |> List.singleton
+    |> Result.Ok
