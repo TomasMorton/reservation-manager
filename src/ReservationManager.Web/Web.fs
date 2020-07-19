@@ -2,6 +2,7 @@ namespace ReservationManager
 
 open Giraffe
 open Microsoft.AspNetCore.Http
+open ReservationManager.CommandData
 
 module HttpHandlers =
     open EventStore.InMemory.Events
@@ -15,9 +16,10 @@ module HttpHandlers =
             let result = Queries.getAllReservations store
             json result next ctx
 
-    let createReservation =
+    let createReservation cmd =
         fun (next : HttpFunc) (ctx : HttpContext) ->
-            setStatusCode 201 next ctx
+            ctx.SetStatusCode 201
+            json cmd next ctx
 
 [<RequireQualifiedAccess>]
 module WebApp =
@@ -30,4 +32,4 @@ module WebApp =
         choose
             [ route "/" >=> root
               GET >=> apiRoute "reservations" >=> getReservations
-              POST >=> apiRoute "reservations" >=> createReservation ]
+              POST >=> apiRoute "reservations" >=> bindJson<CreateReservationData> createReservation ]
