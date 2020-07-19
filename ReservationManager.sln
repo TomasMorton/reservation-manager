@@ -11,6 +11,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{72A9CD54-4
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ReservationManager.UnitTests", "test\ReservationManager.UnitTests\ReservationManager.UnitTests.fsproj", "{F3A259C5-E0E8-4C5E-B894-BF70B2A52DA2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{CB0FE1CF-BE2A-4D65-803B-1852FF97F43B}"
+ProjectSection(SolutionItems) = preProject
+	Directory.Build.props = Directory.Build.props
+	.gitattributes = .gitattributes
+	.gitignore = .gitignore
+	README.md = README.md
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
