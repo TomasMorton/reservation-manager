@@ -15,6 +15,10 @@ module HttpHandlers =
             let result = Queries.getAllReservations store
             json result next ctx
 
+    let createReservation =
+        fun (next : HttpFunc) (ctx : HttpContext) ->
+            setStatusCode 201 next ctx
+
 [<RequireQualifiedAccess>]
 module WebApp =
     open HttpHandlers
@@ -25,4 +29,5 @@ module WebApp =
     let routes : HttpHandler =
         choose
             [ route "/" >=> root
-              GET >=> apiRoute "reservations" >=> getReservations ]
+              GET >=> apiRoute "reservations" >=> getReservations
+              POST >=> apiRoute "reservations" >=> createReservation ]
