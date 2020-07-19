@@ -5,14 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Types.fs" />
-    <Compile Include="Queries.fs" />
     <Compile Include="Web.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Giraffe" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventStore.InMemory\EventStore.InMemory.fsproj" />
+    <ProjectReference Include="..\ReservationManager\ReservationManager.fsproj" />
   </ItemGroup>
 
 </Project>

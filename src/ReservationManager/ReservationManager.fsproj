@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\ReservationManager\ReservationManager.fsproj" />
+    <Compile Include="Types.fs" />
+    <Compile Include="Queries.fs" />
   </ItemGroup>
 
 </Project>
