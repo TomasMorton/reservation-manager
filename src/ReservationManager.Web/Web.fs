@@ -14,12 +14,12 @@ module HttpHandlers =
         fun (next : HttpFunc) (ctx : HttpContext) ->
             let store = getEvents
             let result = Queries.getAllReservations store
-            json result next ctx
+            negotiate result next ctx
 
     let createReservation cmd =
         fun (next : HttpFunc) (ctx : HttpContext) ->
             ctx.SetStatusCode 201
-            json cmd next ctx
+            negotiate cmd next ctx
 
 [<RequireQualifiedAccess>]
 module WebApp =
