@@ -1,6 +1,7 @@
 ﻿namespace EventStore.InMemory
 
 open System
+open ReservationManager
 open ReservationManager.State
 
 module Events =
@@ -8,9 +9,11 @@ module Events =
 
     let private getReservations () =
         [ { Date = DateTime(2020, 01, 01)
-            NumberOfAds = 3 }
+            NumberOfAds = 3
+            ReservationId = ReservationId <| Guid.NewGuid() }
           { Date = DateTime(2020, 02, 01)
-            NumberOfAds = 5 } ]
+            NumberOfAds = 5
+            ReservationId = ReservationId <| Guid.NewGuid() } ]
 
     let getEvents entityType =
         match entityType with
