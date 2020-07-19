@@ -16,12 +16,7 @@ system data required:
   number of faces available per day (capacity)
 
   
-  
-
-## Troubleshooting
-### 404 on new route
-Ensure that your request handler is a class member, not a function:
-```
-[<HttpGet>]
-member __.GetReservations() = []
-```
+## Dependencies
+### Giraffe
+While the basic ASP.NET Core api libraries can be used with F#, they're not very functional. This is particularly an issue when trying to compose the app (dependency management).\
+Giraffe is a slim wrapper around ASP.NET Core that allows us to build a more functionally designed app. 

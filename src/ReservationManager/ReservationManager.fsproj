@@ -6,11 +6,12 @@
 
   <ItemGroup>
     <Compile Include="Types.fs" />
-    <Compile Include="Controllers\BaseController.fs" />
-    <Compile Include="Controllers\ReservationsController.fs" />
-    <Compile Include="Controllers/WeatherForecastController.fs" />
-    <Compile Include="Startup.fs" />
+    <Compile Include="Web.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Giraffe" Version="4.1.0" />
   </ItemGroup>
 
 </Project>

@@ -1,27 +1,27 @@
 namespace ReservationManager
 
-open System
-open System.Collections.Generic
-open System.IO
-open System.Linq
-open System.Threading.Tasks
-open Microsoft.AspNetCore
+open Microsoft.AspNetCore.Builder
 open Microsoft.AspNetCore.Hosting
-open Microsoft.Extensions.Configuration
+open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting
-open Microsoft.Extensions.Logging
+open Giraffe
 
 module Program =
-    let exitCode = 0
+    let configureApp (app : IApplicationBuilder) =
+        app.UseGiraffe WebApp.routes
 
-    let CreateHostBuilder args =
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(fun webBuilder ->
-                webBuilder.UseStartup<Startup>() |> ignore
-            )
+    let configureServices (services : IServiceCollection) =
+        services.AddGiraffe() |> ignore
 
     [<EntryPoint>]
-    let main args =
-        CreateHostBuilder(args).Build().Run()
-
-        exitCode
+    let main _ =
+        Host.CreateDefaultBuilder()
+            .ConfigureWebHostDefaults(
+                fun webHostBuilder ->
+                    webHostBuilder
+                        .Configure(configureApp)
+                        .ConfigureServices(configureServices)
+                        |> ignore)
+            .Build()
+            .Run()
+        0
