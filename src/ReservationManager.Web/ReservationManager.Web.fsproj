@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Include="SystemClock.fs" />
+    <Compile Include="HttpHandlers.fs" />
     <Compile Include="Web.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
