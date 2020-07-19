@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
@@ -18,6 +18,8 @@ ProjectSection(SolutionItems) = preProject
 	.gitignore = .gitignore
 	README.md = README.md
 EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "EventStore.InMemory", "src\EventStore.InMemory\EventStore.InMemory.fsproj", "{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,9 +58,22 @@ Global
 		{F3A259C5-E0E8-4C5E-B894-BF70B2A52DA2}.Release|x64.Build.0 = Release|Any CPU
 		{F3A259C5-E0E8-4C5E-B894-BF70B2A52DA2}.Release|x86.ActiveCfg = Release|Any CPU
 		{F3A259C5-E0E8-4C5E-B894-BF70B2A52DA2}.Release|x86.Build.0 = Release|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Debug|x64.Build.0 = Debug|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Debug|x86.Build.0 = Debug|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Release|x64.ActiveCfg = Release|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Release|x64.Build.0 = Release|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2471BE88-FB77-4560-9B8C-82A1CA1C4B4A} = {330C2150-3D35-4AF6-956A-CDAA1B08FA2E}
 		{F3A259C5-E0E8-4C5E-B894-BF70B2A52DA2} = {72A9CD54-423B-46FC-88EE-92A71FCCB15C}
+		{6462CE97-0AC4-42A9-A480-9DCA1F62B1DA} = {330C2150-3D35-4AF6-956A-CDAA1B08FA2E}
 	EndGlobalSection
 EndGlobal
