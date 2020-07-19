@@ -9,6 +9,7 @@
     <Compile Include="Commands.fs" />
     <Compile Include="Events.fs" />
     <Compile Include="State.fs" />
+    <Compile Include="CommandHandler.fs" />
   </ItemGroup>
 
 </Project>

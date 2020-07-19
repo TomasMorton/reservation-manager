@@ -6,4 +6,4 @@ open ReservationManager
 type Reservation =
     { Date : DateTime
       NumberOfAds : int
-      ReservationId : ReservationId }
+      ReservationId : ReservationId.T }
