@@ -12,6 +12,6 @@ module EventData =
         { Date : DateTime
           NumberOfAds : int
           ReservationId : ReservationId.T
-          Timestamp : DateTime }
+          Timestamp : DateTimeOffset }
 
 type Event = | ReservationCreated of EventData.ReservationCreatedData

@@ -16,10 +16,17 @@ module HttpHandlers =
             let result = Queries.getAllReservations store
             negotiate result next ctx
 
-    let createReservation cmd =
+    let createReservation cmdData =
         fun (next : HttpFunc) (ctx : HttpContext) ->
-            ctx.SetStatusCode 201
-            negotiate cmd next ctx
+            let state = []
+            let handler = CommandHandler.execute SystemClock.clock state
+            match CreateReservation cmdData |> handler with
+            | Result.Ok event ->
+                ctx.SetStatusCode 201
+                negotiate event next ctx
+            | Result.Error error ->
+                ctx.SetStatusCode 400
+                negotiate error next ctx
 
 [<RequireQualifiedAccess>]
 module WebApp =
