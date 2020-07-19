@@ -14,4 +14,4 @@ module EventData =
           ReservationId : ReservationId.T
           Timestamp : DateTime }
 
-type Events = | ReservationCreated of EventData.ReservationCreatedData
+type Event = | ReservationCreated of EventData.ReservationCreatedData

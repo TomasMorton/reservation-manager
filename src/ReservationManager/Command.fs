@@ -7,4 +7,4 @@ module CommandData =
         { Date : DateTime
           NumberOfAds : int }
 
-type Commands = | CreateReservation of CommandData.CreateReservationData
+type Command = | CreateReservation of CommandData.CreateReservationData
