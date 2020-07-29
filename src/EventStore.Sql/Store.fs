@@ -6,7 +6,12 @@ open FSharp.Data.Sql
 let resolutionPath = __SOURCE_DIRECTORY__ + "/SqlProviderDependencies/"
 
 type sql =
-    SqlDataProvider<Common.DatabaseProviderTypes.MSSQLSERVER_DYNAMIC, "Server=localhost;Database=ReservationManager;User Id=sa;Password=Passw0rd", CaseSensitivityChange=Common.CaseSensitivityChange.ORIGINAL, UseOptionTypes=true, ResolutionPath=resolutionPath>
+    SqlDataProvider<
+        Common.DatabaseProviderTypes.MSSQLSERVER_DYNAMIC,
+        "Server=localhost;Database=ReservationManager;User Id=sa;Password=Passw0rd",
+        CaseSensitivityChange=Common.CaseSensitivityChange.ORIGINAL,
+        UseOptionTypes=true,
+        ResolutionPath=resolutionPath>
 
 let getEvents entityType =
     let ctx = sql.GetDataContext()
