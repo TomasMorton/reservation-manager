@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EventStore.InMemory\EventStore.InMemory.fsproj" />
+    <ProjectReference Include="..\EventStore.Sql\EventStore.Sql.fsproj" />
     <ProjectReference Include="..\ReservationManager\ReservationManager.fsproj" />
   </ItemGroup>
 

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Store.fs" />
+    <Content Include="SqlProviderDependencies\Microsoft.Data.SqlClient.dll" />
+    <Content Include="SqlProviderDependencies\Microsoft.Identity.Client.dll" />
+    <Content Include="SqlProviderDependencies\README.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data.Json" Version="1.0.0" />
+    <PackageReference Include="SQLProvider" Version="1.1.91" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReservationManager\ReservationManager.fsproj" />
+  </ItemGroup>
+
+</Project>
