@@ -2,21 +2,24 @@ module ReservationManager.HttpHandlers
 
 open System.Collections.Concurrent
 open Giraffe
-open EventStore.InMemory
+//open EventStore.InMemory
+open EventStore.Sql
 open Microsoft.AspNetCore.Http
 
 // App composition
-let store = ConcurrentDictionary<string, Event list>()
+//let store = ConcurrentDictionary<string, Event list>()
 
 let createCommandHandler () =
     let state = []
     CommandHandler.execute SystemClock.clock state
 
 let appendToStore events =
-    Store.appendEvents store events
+//    Store.appendEvents store events
+    Store.appendEvents events
 
 let getAllReservations () =
-    Store.getEvents store |> Queries.getAllReservations
+//    Store.getEvents store |> Queries.getAllReservations
+    Store.getEvents |> Queries.getAllReservations
 
 // Helpers
 let appendIfSuccessful result =

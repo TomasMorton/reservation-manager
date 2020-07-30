@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Json.fs" />
     <Compile Include="Store.fs" />
     <Content Include="SqlProviderDependencies\Microsoft.Data.SqlClient.dll" />
     <Content Include="SqlProviderDependencies\Microsoft.Identity.Client.dll" />
@@ -13,6 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="FSharp.Data.Json" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="SQLProvider" Version="1.1.91" />
   </ItemGroup>
 
