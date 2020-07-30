@@ -11,7 +11,7 @@ module Store =
 
     let getKeyForEvent event =
         match event with
-        | Event.ReservationCreated -> "Reservations"
+        | Event.ReservationCreated -> "Reservation"
 
     let addToStore store entityType newItems =
         let existingItems = getStoreSection store entityType
@@ -28,5 +28,5 @@ module Store =
 
     let getEvents store entityType =
         match entityType with
-        | "Reservations" -> getStoreSection store "Reservations"
+        | "Reservation" -> getStoreSection store "Reservation"
         | _ -> raise (UnknownEntityType(sprintf "Unknown EntityType: %s" entityType))
